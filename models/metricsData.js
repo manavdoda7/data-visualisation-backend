@@ -1,17 +1,18 @@
 const mongoose = require('mongoose')
 
 var metricsDataSchema = new mongoose.Schema({
-    id: {
+    _id: {
         type: String,
-        required: "Required"
+        required: true,
+        unique: true
     },
     measure: {
         type: String,
-        required: "Required"
+        required: true
     },
     dimensions: {
         type: Array,
-        required: "Required"
+        required: true
     }
 })
 

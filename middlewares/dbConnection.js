@@ -6,5 +6,5 @@ mongoose.connect(uri, (err)=>{
     if(err) console.log('Error connecting to DB', err);
     else console.log('DB connected')
 })
-
+require('../models/metricsData')
 module.exports = mongoose

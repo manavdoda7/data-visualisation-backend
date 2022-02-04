@@ -1,16 +1,16 @@
 const router = require('express').Router()
-const db = require('../middlewares/dbConnection')
+const mongoose = require('mongoose');
+const metricsData = mongoose.model("metricsData")
 router.get('/', (req, res)=>{
     console.log('GET /api/metrics request');
-    res.status(200).json({welcome:'Welcome to the metrics Route.'})
-})
-
-router.post('/', (req, res)=>{
-    console.log('POST /api/metrics request')
-    var metrics = require('../assignment_data/metrics.json')
-    console.log(metrics[0])
-    res.json(metrics)
-    
+    metricsData.find((err, result)=>{
+        if(err) {
+            res.status(408).json({success:false, message:'Please try again after sometime.'})
+            return
+        } else {
+            res.status(200).json({success:true, result:result})
+        }
+    })
 })
 
 module.exports = router
