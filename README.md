@@ -102,4 +102,4 @@ User can upload his own data by changing `metrics.json` file and adding his own 
  
 ## <a name="deployed"></a>To use deployed link for making requests: 
  * Use the base url and append the above given endpoints
- * Example: https://data-visualisation-backend.herokuapp.com/api/users
+ * Example: https://data-visualisation-backend.herokuapp.com/api/metrics
